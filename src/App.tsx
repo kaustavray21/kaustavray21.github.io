@@ -1,7 +1,9 @@
+import { Experience } from './components/Experience'
+import { Hero } from './components/hero/Hero'
 import { Bar } from './components/layout/Bar'
 import { SmoothScroll } from './components/layout/SmoothScroll'
-import { Hero } from './components/hero/Hero'
 import { Statement } from './components/Statement'
+import { FlagshipStack } from './components/work/FlagshipStack'
 import { profile } from './data/profile'
 
 export default function App() {
@@ -11,9 +13,9 @@ export default function App() {
       <main>
         <Bar />
         <Statement />
-        {/* Phase 3: Experience + Flagship work. Phase 4: grid, live strip, impact, archive. */}
-        <section id="work" aria-hidden />
-        <section id="experience" aria-hidden />
+        <Experience />
+        <FlagshipStack />
+        {/* Phase 4: bento grid, live strip, impact panel, education, archive, contact. */}
       </main>
       <footer id="contact" className="footer-stub">
         <a href={`mailto:${profile.email}`}>{profile.email}</a>
