@@ -164,3 +164,24 @@ a.bt-inner:hover .bt-arrow { transform: rotate(45deg); }
   .contact-actions { justify-content: flex-start; }
   .contact-foot { flex-direction: column; gap: calc(8 * var(--u)); margin-top: calc(60 * var(--u)); }
 }
+
+/* ---------- contact portrait: sits in the gap right of LET'S, above BUILD ---------- */
+.contact-stage { position: relative; }
+.contact-photo {
+  position: absolute; right: 0; top: calc(22 * var(--u)); width: calc(330 * var(--u)); height: calc(180 * var(--u)); margin: 0;
+  border-radius: calc(12 * var(--u)); overflow: hidden; background: #111;
+  box-shadow: 0 30px 60px -30px rgb(0 0 0 / .45);
+}
+.contact-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 36%; transition: transform .9s cubic-bezier(.22,1,.36,1); }
+.contact-photo:hover img { transform: scale(1.05); }
+.contact-photo figcaption {
+  position: absolute; left: calc(12 * var(--u)); right: calc(12 * var(--u)); bottom: calc(12 * var(--u)); display: flex; justify-content: space-between; align-items: center;
+  padding-top: calc(8 * var(--u)); border-top: 1px solid rgb(255 255 255 / .35); font-size: calc(11.5 * var(--u)); color: #f4f4f4;
+}
+.contact-photo figcaption .dot { width: calc(6 * var(--u)); height: calc(6 * var(--u)); margin-right: calc(6 * var(--u)); }
+.contact-photo::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, rgb(0 0 0 / .65)); pointer-events: none; }
+.contact-photo figcaption { z-index: 1; }
+
+@media (max-width: 760px) {
+  .contact-photo { position: relative; right: auto; top: auto; width: 100%; height: calc(340 * var(--u)); margin-top: calc(24 * var(--u)); }
+}
