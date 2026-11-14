@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter-tight/wght.css";
+@import "@fontsource-variable/archivo/wdth.css";
+
+/* ---- Design tokens (from prompt.txt "Orvante" spec) ---- */
+:root {
+  /* 1440-px artboard unit; capped at 1.333px */
+  --u: min(calc(100vw / 1440), 1.333px);
+
+  --paper: #dadada;
+  --paper-2: #cdcdcd;
+  --ink: #111;
+  --black: #000;
+  --card-dark: #262626;
+  --card-light: #d6d6d6;
+  --text: #f4f4f4;
+  --grey: #6f6f6f;
+  --hair: rgb(255 255 255 / 0.14);
+  --hair-strong: rgb(255 255 255 / 0.28);
+
+  --font-ui: "Inter Tight Variable", system-ui, sans-serif;
+  --font-display: "Archivo Variable", "Inter Tight Variable", sans-serif;
+}
+
+@media (max-width: 760px) {
+  :root { --u: calc(100vw / 390); }
+}
+
+@theme {
+  --color-paper: #dadada;
+  --color-paper-2: #cdcdcd;
+  --color-ink: #111;
+  --color-card-dark: #262626;
+  --color-card-light: #d6d6d6;
+  --color-text: #f4f4f4;
+  --color-grey: #6f6f6f;
+  --font-ui: "Inter Tight Variable", system-ui, sans-serif;
+  --font-display: "Archivo Variable", "Inter Tight Variable", sans-serif;
+}
+
+html { background: var(--black); }
+html.lenis, html.lenis body { height: auto; }
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+/* Wide display face: Archivo on its width axis */
+.display {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 104;
+  font-weight: 640;
+  line-height: 0.86;
+  letter-spacing: -0.06em;
+}
+.wide { font-family: var(--font-display); font-variation-settings: "wdth" 125; }
+
+/* u-scaled helper: style={{ '--s': 90 }} + className="u-fs" => font-size 90u */
+.u-fs { font-size: calc(var(--s) * var(--u)); }
+
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
