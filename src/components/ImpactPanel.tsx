@@ -88,8 +88,8 @@ export function ImpactPanel() {
             <Laurel />
             <p className="ic-note">Kubernetes application developer and AWS cloud, applied to running AI in production.</p>
           </article>
-          <article className="ic ic-portrait" aria-hidden>
-            <img src={`${base}me-800.webp`} alt="" loading="lazy" />
+          <article className="ic ic-portrait">
+            <img src={`${base}me-field.webp`} alt="Kaustav walking along a ridge outdoors" width={520} height={850} loading="lazy" />
           </article>
         </div>
       </motion.div>

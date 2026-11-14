@@ -28,7 +28,7 @@ export function StatsFrame() {
       </div>
 
       <div className="stat-card stat-photo">
-        <img src={`${base}me-800.webp`} alt="" aria-hidden loading="lazy" />
+        <img src={`${base}me-studio.webp`} alt="Kaustav, studio portrait" width={520} height={624} />
         <div className="stat-photo-top">
           <span>Live · RAG Tutor</span>
           <span>01/07</span>
