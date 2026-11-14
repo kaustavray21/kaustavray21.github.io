@@ -29,3 +29,8 @@ git.txt
 Me-port.jpg.jpeg
 kaustav_fde.pdf
 kasustav_resume_without_number.pdf
+
+# Local source photos (never publish)
+*.jpeg
+*.jpg
+!public/**/*.jpg
