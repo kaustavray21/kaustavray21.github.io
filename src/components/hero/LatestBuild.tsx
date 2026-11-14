@@ -1,4 +1,5 @@
-import { motion, useReducedMotion } from 'motion/react'
+import { motion, useInView, useReducedMotion } from 'motion/react'
+import { useRef } from 'react'
 import { Reveal } from '../ui/Reveal'
 
 const NODES = [
@@ -11,6 +12,8 @@ const NODES = [
 /** "Latest Build" card: live SVG of ArchitechAI's 4-agent LangGraph loop. */
 export function LatestBuild() {
   const reduced = useReducedMotion()
+  const ref = useRef<HTMLAnchorElement>(null)
+  const loop = useInView(ref) && !reduced
   return (
     <Reveal i={8} className="latest">
       <div className="latest-head">
@@ -23,8 +26,9 @@ export function LatestBuild() {
         href="https://github.com/kaustavray21/ArchitechAI"
         target="_blank"
         rel="noreferrer"
-        aria-label="ArchitechAI on GitHub"
+        ref={ref}
       >
+        <span className="sr-only">ArchitechAI on GitHub</span>
         <svg className="latest-art" viewBox="0 0 154 160" aria-hidden>
           <defs>
             <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
@@ -33,7 +37,7 @@ export function LatestBuild() {
           </defs>
           <rect width="154" height="160" fill="url(#grid)" />
           <path
-            className="latest-flow"
+            className={loop ? "latest-flow" : undefined}
             d="M34 28 H120 V92 H34 Z"
             fill="none"
             stroke="#f4f4f4"
@@ -50,8 +54,8 @@ export function LatestBuild() {
                 fill="#000"
                 stroke="#f4f4f4"
                 initial={false}
-                animate={reduced ? undefined : { strokeOpacity: [0.35, 1, 0.35] }}
-                transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.6 }}
+                animate={loop ? { strokeOpacity: [0.35, 1, 0.35] } : { strokeOpacity: 1 }}
+                transition={loop ? { duration: 2.4, repeat: Infinity, delay: i * 0.6 } : { duration: 0.3 }}
               />
               <text x={n.x} y={n.y + 26} textAnchor="middle" fill="#f4f4f4" fontSize="7" letterSpacing=".08em">
                 {n.label}
@@ -62,7 +66,7 @@ export function LatestBuild() {
             </g>
           ))}
         </svg>
-        <span className="latest-tags">LangGraph · SSE · React Flow</span>
+        <span className="latest-tags" aria-hidden>LangGraph · SSE · React Flow</span>
         <span className="latest-btn" aria-hidden>
           ↗
         </span>

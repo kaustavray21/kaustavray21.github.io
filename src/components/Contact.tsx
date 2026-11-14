@@ -1,20 +1,21 @@
-import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
-import { useRef } from 'react'
+import { motion, useReducedMotion } from 'motion/react'
 import { profile } from '../data/profile'
 import { Arrow, Button } from './ui/Button'
 
 export function Contact() {
-  const ref = useRef<HTMLElement>(null)
   const reduced = useReducedMotion()
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end end'] })
-  const x1 = useTransform(scrollYProgress, [0, 1], reduced ? ['0%', '0%'] : ['-12%', '0%'])
-  const x2 = useTransform(scrollYProgress, [0, 1], reduced ? ['0%', '0%'] : ['12%', '0%'])
+  const slide = (from: string) => ({
+    initial: reduced ? false : ({ x: from, opacity: 0 } as const),
+    whileInView: { x: '0%', opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] as const },
+  })
   return (
-    <footer id="contact" ref={ref} className="contact">
+    <footer id="contact" className="contact">
       <p className="sec-label contact-label"><span className="dot" aria-hidden /> (CONTACT)</p>
       <h2 className="contact-title display">
-        <motion.span style={{ x: x1 }}>LET’S</motion.span>
-        <motion.span style={{ x: x2 }}>BUILD</motion.span>
+        <motion.span {...slide('-12%')}>LET’S</motion.span>
+        <motion.span {...slide('12%')}>BUILD</motion.span>
       </h2>
       <div className="contact-row">
         <p className="contact-copy">Open to AI engineering roles: LLM agents, RAG and automation. Based in {profile.location}.</p>

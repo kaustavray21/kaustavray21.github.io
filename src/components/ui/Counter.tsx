@@ -11,12 +11,14 @@ type Props = {
 }
 
 export function Counter({ to, prefix = '', suffix = '', decimals, delay, onView, className }: Props) {
-  const [ref, text] = useCountUp<HTMLSpanElement>(to, { decimals, delay, onView })
+  const [ref, initial] = useCountUp<HTMLSpanElement>(to, { decimals, delay, onView })
+  const final = to.toLocaleString('en-US', { minimumFractionDigits: decimals ?? 0, maximumFractionDigits: decimals ?? 0 })
   return (
-    <span ref={ref} className={className} aria-label={`${prefix}${to.toLocaleString('en-US')}${suffix}`}>
+    <span className={className}>
+      <span className="sr-only">{`${prefix}${final}${suffix}`}</span>
       <span aria-hidden>
         {prefix}
-        {text}
+        <span ref={ref}>{initial}</span>
         {suffix}
       </span>
     </span>

@@ -1,5 +1,6 @@
 import { motion, useInView, useReducedMotion, useScroll, useTransform, type MotionValue } from 'motion/react'
 import { useRef } from 'react'
+import { REC } from '../../hooks/useRecorder'
 import { flagships, type Flagship } from '../../data/projects'
 import { Counter } from '../ui/Counter'
 import { MetricValue } from '../ui/MetricValue'
@@ -8,14 +9,13 @@ import { VISUALS } from './visuals'
 function Card({ p, i, total, progress }: { p: Flagship; i: number; total: number; progress: MotionValue<number> }) {
   const wrap = useRef<HTMLDivElement>(null)
   const reduced = useReducedMotion()
-  const on = useInView(wrap, { amount: 0.35 })
+  const on = useInView(wrap, { amount: 0.35 }) || REC
   // Older cards shrink and dim as later ones slide over them.
   const target = 1 - (total - 1 - i) * 0.035
   const scale = useTransform(progress, [i / total, 1], [1, reduced ? 1 : target])
   const dim = useTransform(progress, [i / total, (i + 1) / total], [0, i === total - 1 ? 0 : 0.45])
-  // Inner parallax: the visual moves against the card while it scrolls in.
-  const { scrollYProgress: own } = useScroll({ target: wrap, offset: ['start end', 'start start'] })
-  const vy = useTransform(own, [0, 1], reduced ? [0, 0] : [70, 0])
+  // Inner parallax from the shared stack progress: the visual moves against the card while it slides in.
+  const vy = useTransform(progress, [Math.max(0, (i - 1) / total), i / total], reduced || i === 0 ? [0, 0] : [70, 0])
   const Vis = VISUALS[p.visual]
 
   return (

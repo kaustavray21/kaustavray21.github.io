@@ -1,7 +1,7 @@
 export function Bar() {
   const scroll = () => document.getElementById('statement')?.scrollIntoView({ behavior: 'smooth' })
   return (
-    <div className="bar wide" role="presentation">
+    <div className="bar wide">
       <span>
         EST <span className="text-grey">2021</span>
       </span>

@@ -2,7 +2,7 @@
 
 /* ---------- shared ---------- */
 .text-grey { color: var(--grey); }
-.text-grey-ink { color: #777; }
+.text-grey-ink { color: #555; }
 .text-text { color: var(--text); }
 .dot { display: inline-block; width: calc(7 * var(--u)); height: calc(7 * var(--u)); border-radius: 50%; background: currentColor; vertical-align: middle; }
 
@@ -76,7 +76,7 @@
 
 .latest { position: absolute; right: calc(57 * var(--u)); top: calc(560 * var(--u)); width: calc(250 * var(--u)); z-index: 2; }
 .latest-head { display: grid; grid-template-columns: 1fr auto; row-gap: calc(2 * var(--u)); font-size: calc(13 * var(--u)); margin-bottom: calc(12 * var(--u)); }
-.latest-head > :first-child { grid-column: 1 / -1; color: #555; }
+.latest-head > :first-child { grid-column: 1 / -1; color: #4a4a4a; }
 .latest-title { font-size: calc(17 * var(--u)); font-weight: 600; letter-spacing: -.02em; }
 .latest-card {
   position: relative; display: block; height: calc(196 * var(--u)); border-radius: calc(10 * var(--u)); overflow: hidden;

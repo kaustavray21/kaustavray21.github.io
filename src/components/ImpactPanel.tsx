@@ -1,5 +1,6 @@
 import { motion, useInView, useReducedMotion } from 'motion/react'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { REC, REC_TIMING } from '../hooks/useRecorder'
 import { siDjango, siFastapi, siGooglegemini, siLangchain, siNeo4j, siPython, siReact, siRedis } from 'simple-icons'
 import { Counter } from './ui/Counter'
 import { Icon } from './ui/Icon'
@@ -32,8 +33,16 @@ function Laurel() {
 /** The spec's "Trusted by" panel, re-cast as impact proof. */
 export function ImpactPanel() {
   const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, amount: 0.35 })
+  const seen = useInView(ref, { once: true, amount: 0.35 })
   const reduced = useReducedMotion()
+  const [recStage, setRecStage] = useState(0) // 1 = counters/avatars, 2 = awards lift
+  useEffect(() => {
+    if (!REC) return
+    const a = setTimeout(() => setRecStage(1), REC_TIMING.impact * 1000)
+    const b = setTimeout(() => setRecStage(2), REC_TIMING.awardsLift * 1000)
+    return () => { clearTimeout(a); clearTimeout(b) }
+  }, [])
+  const inView = REC ? recStage >= 1 : seen
   return (
     <section className="impact" aria-labelledby="impact-h">
       <motion.div
@@ -71,7 +80,7 @@ export function ImpactPanel() {
               <p className="ic-label">Learners on shipped AI</p>
             </div>
           </article>
-          <article className="ic ic-dark">
+          <article className={`ic ic-dark ${recStage >= 2 ? 'is-lifted' : ''}`}>
             <div>
               <Counter to={2} onView className="ic-num" />
               <p className="ic-label">Industry certifications</p>
@@ -80,7 +89,7 @@ export function ImpactPanel() {
             <p className="ic-note">Kubernetes application developer and AWS cloud, applied to running AI in production.</p>
           </article>
           <article className="ic ic-portrait" aria-hidden>
-            <img src={`${base}me.webp`} alt="" loading="lazy" />
+            <img src={`${base}me-800.webp`} alt="" loading="lazy" />
           </article>
         </div>
       </motion.div>

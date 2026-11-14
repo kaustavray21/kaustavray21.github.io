@@ -1,5 +1,6 @@
-import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'motion/react'
-import { useRef } from 'react'
+import { animate, motion, useMotionValue, useReducedMotion, useScroll, useTransform, type MotionValue } from 'motion/react'
+import { useEffect, useRef } from 'react'
+import { REC, REC_TIMING } from '../hooks/useRecorder'
 
 const LINES = [
   'I find slow, manual processes',
@@ -24,6 +25,13 @@ export function Statement() {
   const ref = useRef<HTMLElement>(null)
   const reduced = useReducedMotion()
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.75', 'end 0.85'] })
+  const timed = useMotionValue(0)
+  useEffect(() => {
+    if (!REC) return
+    const c = animate(timed, 1, { ...REC_TIMING.statement, ease: 'linear' })
+    return () => c.stop()
+  }, [timed])
+  const progress = REC ? timed : scrollYProgress
 
   return (
     <section id="statement" ref={ref} className="statement" aria-label="About me">
@@ -31,7 +39,7 @@ export function Statement() {
         {WORDS.map((x, i) => (
           <span key={i}>
             {x.br && <br className="hide-sm" />}
-            {reduced ? <span className="text-text">{x.w} </span> : <Word w={x.w} i={i} p={scrollYProgress} />}
+            {reduced ? <span className="text-text">{x.w} </span> : <Word w={x.w} i={i} p={progress} />}
           </span>
         ))}
       </p>

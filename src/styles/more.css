@@ -26,14 +26,14 @@ a.bt-inner:hover { border-color: rgb(255 255 255 / .45); }
 .bt-link { display: inline-flex; gap: calc(8 * var(--u)); align-items: center; }
 .bt-arrow { display: inline-grid; place-items: center; width: calc(26 * var(--u)); height: calc(26 * var(--u)); border-radius: 50%; background: var(--text); color: #000; transition: transform .35s; }
 a.bt-inner:hover .bt-arrow { transform: rotate(45deg); }
-.bt-tag { display: inline-flex; gap: calc(7 * var(--u)); align-items: center; color: #9a9a9a; }
+.bt-tag { display: inline-flex; gap: calc(7 * var(--u)); align-items: center; color: #a8a8a8; }
 .bt-tag .dot { width: calc(5 * var(--u)); height: calc(5 * var(--u)); }
 
 /* ---------- live strip (paper) ---------- */
 .live { position: relative; height: 340vh; background: var(--paper); color: var(--ink); }
 .live-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: calc(40 * var(--u)); }
 .live-head { display: grid; grid-template-columns: 1fr calc(360 * var(--u)); align-items: end; padding: 0 calc(57 * var(--u)); }
-.live-label { grid-column: 1 / -1; color: #666; }
+.live-label { grid-column: 1 / -1; color: #4a4a4a; }
 .live .sec-title { color: var(--ink); font-size: calc(76 * var(--u)); }
 .live-progress { height: 2px; background: rgb(17 17 17 / .15); margin-bottom: calc(14 * var(--u)); }
 .live-progress i { display: block; height: 100%; background: var(--ink); transform-origin: left; }
@@ -117,7 +117,7 @@ a.bt-inner:hover .bt-arrow { transform: rotate(45deg); }
 
 /* ---------- contact ---------- */
 .contact { padding: calc(130 * var(--u)) calc(57 * var(--u)) calc(40 * var(--u)); background: var(--paper); color: var(--ink); overflow: hidden; }
-.contact-label { color: #666; }
+.contact-label { color: #4a4a4a; }
 .contact-title { display: flex; flex-direction: column; margin: 0; font-size: calc(230 * var(--u)); line-height: .8; letter-spacing: -.07em; }
 .contact-title span:last-child { align-self: flex-end; }
 .contact-row { display: flex; justify-content: space-between; align-items: flex-end; gap: calc(30 * var(--u)); margin-top: calc(60 * var(--u)); }

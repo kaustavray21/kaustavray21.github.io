@@ -41,7 +41,7 @@ function Tile({ f, i }: { f: Featured; i: number }) {
     >
       <motion.div className="bt-card" style={{ rotateX: rx, rotateY: ry }} onPointerMove={move} onPointerLeave={leave}>
         {f.link ? (
-          <a className="bt-inner" href={f.link} target="_blank" rel="noreferrer" aria-label={`${f.title} on GitHub`}>{Inner}</a>
+          <a className="bt-inner" href={f.link} target="_blank" rel="noreferrer">{Inner}</a>
         ) : (
           <div className="bt-inner">{Inner}</div>
         )}

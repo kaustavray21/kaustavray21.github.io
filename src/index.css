@@ -4,6 +4,7 @@
 @import "./styles/sections.css";
 @import "./styles/work.css";
 @import "./styles/more.css";
+@import "./styles/polish.css";
 
 /* ---- Design tokens (from prompt.txt "Orvante" spec) ---- */
 :root {
@@ -17,7 +18,8 @@
   --card-dark: #262626;
   --card-light: #d6d6d6;
   --text: #f4f4f4;
-  --grey: #6f6f6f;
+  --grey: #8e8e8e; /* small text on black: 6.1:1 */
+  --grey-fill: #6f6f6f; /* statement fill start (large text) */
   --hair: rgb(255 255 255 / 0.14);
   --hair-strong: rgb(255 255 255 / 0.28);
 
@@ -36,7 +38,7 @@
   --color-card-dark: #262626;
   --color-card-light: #d6d6d6;
   --color-text: #f4f4f4;
-  --color-grey: #6f6f6f;
+  --color-grey: #8e8e8e;
   --font-ui: "Inter Tight Variable", system-ui, sans-serif;
   --font-display: "Archivo Variable", "Inter Tight Variable", sans-serif;
 }

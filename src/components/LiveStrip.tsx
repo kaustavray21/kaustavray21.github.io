@@ -1,5 +1,5 @@
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { demos } from '../data/more'
 
 const base = import.meta.env.BASE_URL
@@ -11,15 +11,13 @@ export function LiveStrip() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] })
   const track = useRef<HTMLUListElement>(null)
   const [dist, setDist] = useState(0)
-  useLayoutEffect(() => {
-    const measure = () => {
-      const el = track.current
-      if (!el) return
-      setDist(Math.max(0, el.scrollWidth - window.innerWidth))
-    }
-    measure()
-    window.addEventListener('resize', measure)
-    return () => window.removeEventListener('resize', measure)
+  useEffect(() => {
+    const el = track.current
+    if (!el) return
+    // ResizeObserver reports after layout, so measuring never forces a synchronous reflow.
+    const ro = new ResizeObserver(([e]) => setDist(Math.max(0, e.target.scrollWidth - document.documentElement.clientWidth)))
+    ro.observe(el)
+    return () => ro.disconnect()
   }, [])
   const x = useTransform(scrollYProgress, [0.08, 0.95], [0, reduced ? 0 : -dist])
   const bar = useTransform(scrollYProgress, [0, 1], [0, 1])
