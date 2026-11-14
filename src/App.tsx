@@ -1,10 +1,15 @@
+import { Archive } from './components/Archive'
+import { Contact } from './components/Contact'
+import { Education } from './components/Education'
 import { Experience } from './components/Experience'
+import { BentoGrid } from './components/grid/BentoGrid'
 import { Hero } from './components/hero/Hero'
+import { ImpactPanel } from './components/ImpactPanel'
 import { Bar } from './components/layout/Bar'
 import { SmoothScroll } from './components/layout/SmoothScroll'
+import { LiveStrip } from './components/LiveStrip'
 import { Statement } from './components/Statement'
 import { FlagshipStack } from './components/work/FlagshipStack'
-import { profile } from './data/profile'
 
 export default function App() {
   return (
@@ -15,13 +20,13 @@ export default function App() {
         <Statement />
         <Experience />
         <FlagshipStack />
-        {/* Phase 4: bento grid, live strip, impact panel, education, archive, contact. */}
+        <BentoGrid />
+        <LiveStrip />
+        <ImpactPanel />
+        <Education />
+        <Archive />
       </main>
-      <footer id="contact" className="footer-stub">
-        <a href={`mailto:${profile.email}`}>{profile.email}</a>
-        <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        <a href={profile.github} target="_blank" rel="noreferrer">GitHub ↗</a>
-      </footer>
+      <Contact />
     </SmoothScroll>
   )
 }

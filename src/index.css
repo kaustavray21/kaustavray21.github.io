@@ -3,6 +3,7 @@
 @import "@fontsource-variable/archivo/wdth.css";
 @import "./styles/sections.css";
 @import "./styles/work.css";
+@import "./styles/more.css";
 
 /* ---- Design tokens (from prompt.txt "Orvante" spec) ---- */
 :root {

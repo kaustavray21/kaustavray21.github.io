@@ -152,9 +152,6 @@
 }
 .statement-sub { margin: calc(150 * var(--u)) auto 0; font-size: calc(23 * var(--u)); line-height: 1.35; letter-spacing: -.01em; }
 
-.footer-stub { display: flex; justify-content: center; gap: calc(28 * var(--u)); padding: calc(60 * var(--u)) calc(57 * var(--u)); background: #000; border-top: 1px solid var(--hair); font-size: calc(14 * var(--u)); }
-.footer-stub a { color: var(--text); text-decoration: none; }
-.footer-stub a:hover { text-decoration: underline; }
 
 /* ---------- phone (≤ 760px, u = 100vw/390): one column ---------- */
 @media (max-width: 760px) {
@@ -185,5 +182,4 @@
   .statement { padding: calc(100 * var(--u)) calc(20 * var(--u)) calc(120 * var(--u)); }
   .statement-text { font-size: calc(28 * var(--u)); }
   .statement-sub { margin-top: calc(70 * var(--u)); font-size: calc(17 * var(--u)); }
-  .footer-stub { flex-direction: column; align-items: center; gap: calc(12 * var(--u)); }
 }
