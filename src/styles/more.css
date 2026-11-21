@@ -61,7 +61,7 @@ a.bt-inner:hover .bt-arrow { transform: rotate(45deg); }
 .impact { padding: calc(150 * var(--u)) 0 calc(150 * var(--u)); background: #000; }
 .impact-panel {
   position: relative; display: grid; grid-template-columns: 1fr auto; gap: calc(30 * var(--u)); align-items: center;
-  width: calc(1302 * var(--u)); max-width: calc(100% - 32px); height: calc(429 * var(--u)); margin: 0 auto; padding: 0 0 0 calc(48 * var(--u));
+  width: calc(1302 * var(--u)); max-width: calc(100% - 32px); height: calc(429 * var(--u)); margin: 0 auto; padding: 0 calc(52 * var(--u)) 0 calc(48 * var(--u));
   border: 1px solid var(--hair-strong); border-radius: calc(14 * var(--u)); overflow: hidden;
 }
 .impact-left { position: relative; }
@@ -75,11 +75,11 @@ a.bt-inner:hover .bt-arrow { transform: rotate(45deg); }
 .glass-1 { left: calc(268 * var(--u)); top: calc(-40 * var(--u)); }
 .glass-2 { left: calc(150 * var(--u)); top: calc(150 * var(--u)); grid-template-columns: repeat(2, calc(12 * var(--u))); gap: calc(10 * var(--u)); place-content: center; }
 .glass-2 i { width: calc(12 * var(--u)); height: calc(12 * var(--u)); border-radius: 50%; background: var(--text); }
-.impact-cards { display: flex; gap: calc(12 * var(--u)); margin-right: calc(-40 * var(--u)); }
+.impact-cards { display: flex; gap: calc(12 * var(--u)); }
 .ic { position: relative; height: calc(326 * var(--u)); border-radius: calc(8 * var(--u)); padding: calc(22 * var(--u)); display: flex; flex-direction: column; justify-content: space-between; transition: transform .4s cubic-bezier(.22,1,.36,1); }
 .ic:hover { transform: translateY(calc(-6 * var(--u))); }
-.ic-light { width: calc(400 * var(--u)); background: var(--card-light); color: var(--ink); }
-.ic-dark { width: calc(403 * var(--u)); background: var(--card-dark); }
+.ic-light { width: calc(340 * var(--u)); background: var(--card-light); color: var(--ink); }
+.ic-dark { width: calc(340 * var(--u)); background: var(--card-dark); }
 .ic-avatars { display: grid; grid-template-columns: repeat(4, calc(48 * var(--u))); gap: calc(12 * var(--u)) calc(14 * var(--u)); margin: 0; padding: 0; list-style: none; }
 .ic-avatars li { display: grid; place-items: center; width: calc(48 * var(--u)); height: calc(48 * var(--u)); border-radius: 50%; background: #111; color: #f4f4f4; }
 .ic-num { display: block; font-family: var(--font-display); font-variation-settings: "wdth" 104; font-weight: 640; font-size: calc(43 * var(--u)); letter-spacing: -.04em; line-height: 1; }
