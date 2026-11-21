@@ -3,7 +3,6 @@ import { Counter } from '../ui/Counter'
 import { Icon } from '../ui/Icon'
 import { Reveal } from '../ui/Reveal'
 
-const base = import.meta.env.BASE_URL
 const GLYPHS = [siPython, siDjango, siFastapi, siCelery, siLangchain, siGooglegemini]
 
 export function StatsFrame() {
@@ -28,7 +27,6 @@ export function StatsFrame() {
       </div>
 
       <div className="stat-card stat-photo">
-        <img src={`${base}me-studio.webp`} alt="Kaustav, studio portrait" width={520} height={624} />
         <div className="stat-photo-top">
           <span>Live · RAG Tutor</span>
           <span>01/07</span>

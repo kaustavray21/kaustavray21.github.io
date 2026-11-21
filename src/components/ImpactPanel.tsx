@@ -5,7 +5,6 @@ import { siDjango, siFastapi, siGooglegemini, siLangchain, siNeo4j, siPython, si
 import { Counter } from './ui/Counter'
 import { Icon } from './ui/Icon'
 
-const base = import.meta.env.BASE_URL
 const TECH = [siPython, siDjango, siFastapi, siLangchain, siReact, siNeo4j, siRedis, siGooglegemini]
 
 function Laurel() {
@@ -87,9 +86,6 @@ export function ImpactPanel() {
             </div>
             <Laurel />
             <p className="ic-note">Kubernetes application developer and AWS cloud, applied to running AI in production.</p>
-          </article>
-          <article className="ic ic-portrait">
-            <img src={`${base}me-field.webp`} alt="Kaustav walking along a ridge outdoors" width={520} height={850} loading="lazy" />
           </article>
         </div>
       </motion.div>

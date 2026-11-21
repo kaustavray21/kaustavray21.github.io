@@ -78,12 +78,8 @@ a.bt-inner:hover .bt-arrow { transform: rotate(45deg); }
 .impact-cards { display: flex; gap: calc(12 * var(--u)); margin-right: calc(-40 * var(--u)); }
 .ic { position: relative; height: calc(326 * var(--u)); border-radius: calc(8 * var(--u)); padding: calc(22 * var(--u)); display: flex; flex-direction: column; justify-content: space-between; transition: transform .4s cubic-bezier(.22,1,.36,1); }
 .ic:hover { transform: translateY(calc(-6 * var(--u))); }
-.ic-light { width: calc(293 * var(--u)); background: var(--card-light); color: var(--ink); }
-.ic-dark { width: calc(298 * var(--u)); background: var(--card-dark); }
-.ic-portrait { width: calc(200 * var(--u)); padding: 0; overflow: hidden; background: #000; }
-.ic-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transform: scale(1.2); transform-origin: 92% 32%; transition: transform .8s cubic-bezier(.22,1,.36,1); }
-.ic-portrait:hover img { transform: scale(1.26); }
-@media (max-width: 760px) { .ic-portrait img { transform: none; } .ic-portrait:hover img { transform: scale(1.04); } }
+.ic-light { width: calc(400 * var(--u)); background: var(--card-light); color: var(--ink); }
+.ic-dark { width: calc(403 * var(--u)); background: var(--card-dark); }
 .ic-avatars { display: grid; grid-template-columns: repeat(4, calc(48 * var(--u))); gap: calc(12 * var(--u)) calc(14 * var(--u)); margin: 0; padding: 0; list-style: none; }
 .ic-avatars li { display: grid; place-items: center; width: calc(48 * var(--u)); height: calc(48 * var(--u)); border-radius: 50%; background: #111; color: #f4f4f4; }
 .ic-num { display: block; font-family: var(--font-display); font-variation-settings: "wdth" 104; font-weight: 640; font-size: calc(43 * var(--u)); letter-spacing: -.04em; line-height: 1; }
@@ -151,7 +147,6 @@ a.bt-inner:hover .bt-arrow { transform: rotate(45deg); }
   .glass-2 { display: none; }
   .impact-cards { flex-direction: column; margin-right: 0; }
   .ic, .ic-light, .ic-dark { width: auto; height: auto; min-height: calc(260 * var(--u)); gap: calc(20 * var(--u)); }
-  .ic-portrait { display: block; height: calc(380 * var(--u)); }
   .edu { padding: 0 calc(16 * var(--u)) calc(90 * var(--u)); }
   .edu li { grid-template-columns: 1fr; gap: calc(4 * var(--u)); }
   .arch { padding: 0 calc(16 * var(--u)) calc(100 * var(--u)); }
