@@ -1,7 +1,7 @@
 import { useEffect, type RefObject } from 'react'
 
 const DESKTOP = 1024
-const SENSITIVITY = 0.8 // full window width of mouse travel = 0.8 × video duration
+const SENSITIVITY = 1.2 // full window width of mouse travel = 1.2 × video duration
 
 /**
  * Desktop (≥1024px): horizontal mouse movement scrubs the video.

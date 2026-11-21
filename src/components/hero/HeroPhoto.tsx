@@ -3,8 +3,9 @@ import { useEffect, useRef, type ReactNode } from 'react'
 import { REC } from '../../hooks/useRecorder'
 import { useVideoScrub } from '../../hooks/useVideoScrub'
 
-const HERO_VIDEO =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260601_110537_3a579fa0-7bbc-4d94-9d25-0e816c7840f5.mp4'
+// Re-encoded from the prompt-2 source: cropped to the figure, greyscale, every frame a keyframe
+// so mouse scrubbing can jump to any frame without decoding from the start.
+const HERO_VIDEO = `${import.meta.env.BASE_URL}hero.mp4`
 
 /**
  * 3D figure video, rendered in greyscale and multiply-blended into the paper.

@@ -29,10 +29,10 @@
   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   will-change: transform;
 }
-/* 16:9 source with the figure right of centre: crop the portrait box onto the figure. */
+/* Video is pre-cropped to the figure and already greyscale; the lift turns its backdrop white so multiply leaves the paper. */
 .hero-photo video {
-  display: block; width: 100%; height: 100%; object-fit: cover; object-position: 83% 50%;
-  filter: grayscale(1) contrast(1.1) brightness(1.16);
+  display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0;
+  filter: contrast(1.1) brightness(1.16);
   mix-blend-mode: multiply; user-select: none; pointer-events: none;
 }
 
