@@ -86,7 +86,6 @@ Only public repos you own get GitHub / Live links.
 | IntelliAiMentor (incl. incident recovery story) | none | AI · Ops |
 | SIH-2025 Jharkhand Tourism Platform (Team Ananta) | none | Hackathon |
 | EDA AI Agent (LangChain + Gemini, R) | none (local) | AI/Data |
-| Saha Bakery (React 19 + Spring Boot 3, JWT) | none (local) | Full-stack |
 | Multivendor Marketplace (Django) | none (local) | Full-stack |
 | AI Mentor landing (Next.js/Vite) | none (local) | Frontend |
 | Nigrani: Risk App Monitor (Kotlin, collab) | none | Mobile |
