@@ -29,8 +29,10 @@
   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   will-change: transform;
 }
-.hero-photo img {
-  width: 100%; height: 100%; object-fit: cover; object-position: 50% 0;
+/* 16:9 source with the figure right of centre: crop the portrait box onto the figure. */
+.hero-photo video {
+  display: block; width: 100%; height: 100%; object-fit: cover; object-position: 83% 50%;
+  filter: grayscale(1) contrast(1.1) brightness(1.16);
   mix-blend-mode: multiply; user-select: none; pointer-events: none;
 }
 
@@ -132,8 +134,8 @@
 
 .hero-logos {
   position: absolute; left: 0; right: 0; top: calc(896 * var(--u)); display: flex; justify-content: center; gap: calc(14 * var(--u));
-  font-size: calc(15 * var(--u)); font-weight: 600; letter-spacing: .02em; color: rgb(17 17 17 / .85);
-  text-shadow: 0 0 6px var(--paper), 0 0 14px var(--paper);
+  font-size: calc(15 * var(--u)); font-weight: 600; letter-spacing: .02em; color: rgb(244 244 244 / .82);
+  text-shadow: 0 0 8px rgb(0 0 0 / .6);
 }
 
 /* ---------- bar ---------- */
