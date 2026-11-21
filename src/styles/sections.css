@@ -126,17 +126,6 @@
 .stat-photo-top { position: absolute; left: calc(10 * var(--u)); right: calc(10 * var(--u)); top: calc(9 * var(--u)); display: flex; justify-content: space-between; padding-bottom: calc(6 * var(--u)); border-bottom: 1px solid rgb(255 255 255 / .28); font-size: calc(9.5 * var(--u)); }
 .stat-photo-bottom { position: absolute; right: calc(10 * var(--u)); bottom: calc(10 * var(--u)); left: calc(10 * var(--u)); text-align: right; }
 
-.brand-plate {
-  position: absolute; left: calc(194 * var(--u)); top: calc(772 * var(--u)); width: calc(364 * var(--u)); height: calc(73 * var(--u));
-  display: flex; align-items: center; gap: calc(16 * var(--u)); padding: 0 calc(22 * var(--u)); border-radius: calc(12 * var(--u)); color: var(--text);
-  background: rgb(17 17 17 / .62); backdrop-filter: blur(16px) saturate(1.1); -webkit-backdrop-filter: blur(16px) saturate(1.1);
-  border: 1px solid rgb(255 255 255 / .14); box-shadow: 0 20px 40px rgb(0 0 0 / .18);
-}
-.brand-mark { width: calc(34 * var(--u)); height: calc(30 * var(--u)); }
-.brand-word { flex: 1; font-size: calc(25 * var(--u)); font-weight: 600; letter-spacing: .02em; }
-.brand-menu { display: grid; gap: calc(6 * var(--u)); width: calc(24 * var(--u)); }
-.brand-menu i { display: block; height: 2px; background: currentColor; }
-.brand-menu i:last-child { width: 60%; justify-self: end; }
 
 .hero-logos {
   position: absolute; left: 0; right: 0; top: calc(896 * var(--u)); display: flex; justify-content: center; gap: calc(14 * var(--u));
@@ -179,8 +168,6 @@
   .hero-about { margin-top: calc(20 * var(--u)); }
   .hero-left .btn { margin-top: calc(18 * var(--u)); }
   .hero-photo { order: 2; height: calc(470 * var(--u)); margin: 0 calc(-16 * var(--u)); mask-image: linear-gradient(180deg, #000 85%, transparent); }
-  .brand-plate { position: absolute; left: calc(50% - 150 * var(--u)); top: calc(330 * var(--u)); width: calc(300 * var(--u)); height: calc(60 * var(--u)); }
-  .brand-word { font-size: calc(20 * var(--u)); }
   .hero-logos { top: calc(422 * var(--u)); gap: calc(8 * var(--u)); font-size: calc(11 * var(--u)); }
   .hero-certs { order: 3; align-self: flex-start; }
   .hero-available { order: 4; align-items: flex-start; }

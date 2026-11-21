@@ -3,7 +3,7 @@ import { profile } from '../../data/profile'
 import { Nav } from '../layout/Nav'
 import { Arrow, Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
-import { BrandPlate, StackWordmarks } from './BrandPlate'
+import { StackWordmarks } from './StackWordmarks'
 import { HeroPhoto } from './HeroPhoto'
 import { LatestBuild } from './LatestBuild'
 import { StatsFrame } from './StatsFrame'
@@ -30,7 +30,6 @@ export function Hero() {
   return (
     <header id="top" className="hero">
       <HeroPhoto>
-        <BrandPlate />
         <StackWordmarks />
       </HeroPhoto>
 
