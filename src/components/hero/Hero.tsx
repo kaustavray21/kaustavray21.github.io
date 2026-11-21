@@ -7,6 +7,7 @@ import { BrandPlate, StackWordmarks } from './BrandPlate'
 import { HeroPhoto } from './HeroPhoto'
 import { LatestBuild } from './LatestBuild'
 import { StatsFrame } from './StatsFrame'
+import { Typewriter } from './Typewriter'
 
 function TitleLine({ text, i, children }: { text: string; i: number; children?: React.ReactNode }) {
   const reduced = useReducedMotion()
@@ -55,6 +56,7 @@ export function Hero() {
           </TitleLine>
           <span className="sr-only">, {profile.role}</span>
         </h1>
+        <Typewriter text={'I build AI agents,\nRAG & automation.'} />
 
         <Reveal i={2} className="hero-about">
           <p className="about-label">
